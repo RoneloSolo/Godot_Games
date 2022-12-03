@@ -2,23 +2,15 @@ using Godot;
 using System;
 
 public class Player : RigidBody2D{
-	private static readonly float WALK_ACCELERATION = 800.0f;
-	private static readonly float WALK_DEACCELERATION = 800.0f;
-	private static readonly float WALK_MAX_VELOCITY = 200.0f;
-	private static readonly float AIR_ACCELERATION = 200.0f;
-	private static readonly float AIR_DEACCELERATION = 200.0f;
-	private static readonly float JUMP_VELOCITY = 460.0f;
-	private static readonly float STOP_JUMP_FORCE = 900.0f;
-	private static readonly float MAX_SHOOT_POSE_TIME = 0.3f;
-	private static readonly float MAX_FLOOR_AIRBORNE_TIME = 0.15f;
-
-	private int speed = 100;
+	private readonly float ACCELERATION = 5;
+	private readonly float DEACCELERATION = .5f;
+	private readonly int SPEED = 200;
 	
 	private void ProcessMovement(Physics2DDirectBodyState bodyState){
 		var inputVelocityHorizontal = Input.GetActionStrength("right") - Input.GetActionStrength("left");
-		inputVelocityHorizontal *= speed;
+		inputVelocityHorizontal *= SPEED;
 		inputVelocityHorizontal -= LinearVelocity.x;
-		inputVelocityHorizontal = (inputVelocityHorizontal == 0) ? inputVelocityHorizontal * 1 : inputVelocityHorizontal * 10;
+		inputVelocityHorizontal = (inputVelocityHorizontal == 0) ? inputVelocityHorizontal * DEACCELERATION : inputVelocityHorizontal * ACCELERATION;
 		AppliedForce = new Vector2(inputVelocityHorizontal, 0);
 		bodyState.LinearVelocity += bodyState.Step * bodyState.TotalGravity;
 	}
