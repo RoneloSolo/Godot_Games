@@ -15,7 +15,7 @@ public class Player : KinematicBody2D{
 	private float t_buffer;
 	private float t_delay;
 	private bool isOnFloor;
-	private readonly float GRAVITY = 9.81f;
+	private readonly float GRAVITY = 98.1f;
 	private Vector2 velocity;
 
 	public override void _Process(float delta){
@@ -48,10 +48,11 @@ public class Player : KinematicBody2D{
 		if(t_cayote > 0 && t_buffer > 0){
 			t_buffer = 0;
 			t_delay = L_DELAY;
+			velocity.y = 0;
 			velocity.y -= JUMP_THRUST;
 		}
 
-		velocity.y += GRAVITY * delta;
+		if(!isOnFloor) velocity.y += GRAVITY * delta;
 
 		MoveAndSlide(velocity);
 	}
