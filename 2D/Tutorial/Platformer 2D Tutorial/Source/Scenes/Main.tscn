@@ -13,8 +13,8 @@ extents = Vector2( 515, 25 )
 
 [node name="Stage" type="Node2D"]
 
-[node name="Player" type="RigidBody2D" parent="."]
-mode = 2
+[node name="Player" type="KinematicBody2D" parent="."]
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
@@ -26,11 +26,12 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="FloorCheck" type="Area2D" parent="Player"]
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Player/FloorCheck"]
 position = Vector2( 0, 20 )
 shape = SubResource( 2 )
-disabled = true
 
 [node name="CellingCheck" type="Node" parent="Player"]
 
@@ -52,6 +53,8 @@ current = true
 [node name="World" type="Node" parent="."]
 
 [node name="Floor" type="StaticBody2D" parent="World"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor"]
 position = Vector2( 0, 275 )
@@ -62,3 +65,6 @@ modulate = Color( 0, 0.894118, 0.211765, 1 )
 position = Vector2( 0, 275 )
 scale = Vector2( 1026, 48.5 )
 texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="Player/FloorCheck" to="Player" method="CheckFloorColl" binds= [ true ]]
+[connection signal="body_exited" from="Player/FloorCheck" to="Player" method="CheckFloorColl" binds= [ false ]]
