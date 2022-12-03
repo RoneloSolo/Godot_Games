@@ -1,0 +1,9 @@
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/bin/Debug/Platformer 2D Tutorial.dll
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/bin/Debug/Platformer 2D Tutorial.pdb
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.csproj.AssemblyReference.cache
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.GeneratedMSBuildEditorConfig.editorconfig
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.AssemblyInfoInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.AssemblyInfo.cs
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.csproj.CoreCompileInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.dll
+/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/.mono/temp/obj/Debug/Platformer 2D Tutorial.pdb

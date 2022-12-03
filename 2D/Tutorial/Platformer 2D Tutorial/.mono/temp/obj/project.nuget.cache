@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "obzv2Zkw6Am3ntL+sYDSBISGvwzYaXVW9NhyIV1PYdO0mp0l8PZYfe30Ogfr3uLXnL7Q7Kj44hB0Yf6+ByJyvQ==",
+  "success": true,
+  "projectFilePath": "/media/ron/StorageFiles/Godot Games/2D/Tutorial/Platformer 2D Tutorial/Platformer 2D Tutorial.csproj",
+  "expectedPackageFiles": [
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
