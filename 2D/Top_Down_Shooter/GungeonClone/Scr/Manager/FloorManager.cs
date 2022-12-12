@@ -78,7 +78,7 @@ public class FloorManager : Node2D{
 		var amount = 10;
 		enemyLeft = amount;
 		for(int i = 0; i < amount; i++){
-			var enemy = (RigidBody2D)enemyPrefab[(int)GD.RandRange(0,enemyPrefab.Length)].Instance();
+			var enemy = (KinematicBody2D)enemyPrefab[(int)GD.RandRange(0,enemyPrefab.Length)].Instance();
 			enemy.Connect("tree_exiting", this, "EnemyDie");
 			GetTree().CurrentScene.GetNode("YSort").AddChild(enemy);
 		}

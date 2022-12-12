@@ -25,16 +25,6 @@ public class PlayerCharacterController : KinematicBody2D{
 		cellingRay = GetNode<RayCast2D>("CellingRay");
 	}
 
-	public override void _Process(float delta) => ProccesJump(delta);
-
-	public override void _PhysicsProcess(float delta) => ProccesMovement(delta);
-
-	private void CheckFloorColl(Godot.Object node, bool condition){
-		t_cayote = L_CAYOTE;
-		isOnFloor = condition;
-		if(condition) c_jump = L_JUMP;
-	}
-
 	private void ProccesJump(float delta){
 		if(t_buffer > 0) t_buffer -= delta;
 		if(!isOnFloor) t_cayote -= delta;
@@ -46,24 +36,46 @@ public class PlayerCharacterController : KinematicBody2D{
 		else if(Input.IsActionJustReleased("jump")) t_hold = 0;
 	}
 
-	private void ProccesMovement(float delta){
-		var input = Input.GetActionStrength("right") - Input.GetActionStrength("left");
-		var maxSpeed = input * SPEED;
-
-		if(input != 0) velocity.x = Mathf.Lerp(velocity.x, maxSpeed, ACCELERATION * delta);
-		else velocity.x = Mathf.Lerp(velocity.x, 0, DEACCELERATION * delta);
-
-		if((t_cayote > 0 && t_buffer > 0) || (t_buffer > 0 && c_jump > 0) || t_hold > 0){
-			if(t_hold <= 0) t_hold = L_HOLD;
-			t_hold -= delta;
+	private void Jump(float delta){
+		if((t_cayote > 0 && t_buffer > 0) || (t_buffer > 0 && c_jump > 0)){
+			t_hold = L_HOLD;
 			c_jump--;
-			t_delay = L_DELAY;
 			t_buffer = 0;
 			velocity.y = 0;
 			velocity.y -= JUMP_THRUST;
+			t_delay = L_DELAY;
 		}
-		if(cellingRay.IsColliding() && velocity.y < 0f) velocity.y = 0;
+		else if(t_hold > 0){
+			t_hold -= delta;
+			velocity.y = 0;
+			velocity.y -= JUMP_THRUST;
+			t_delay = L_DELAY;
+		}
+	}
+
+	private void CheckFloorColl(Godot.Object node, bool condition){
+		t_cayote = L_CAYOTE;
+		isOnFloor = condition;
+		if(isOnFloor) c_jump = L_JUMP;
+	}
+
+	private float Movement(float delta){
+	    var input = Input.GetActionStrength("right") - Input.GetActionStrength("left");
+	    var maxSpeed = input * SPEED;
+		if(input != 0) return Mathf.Lerp(velocity.x, maxSpeed, ACCELERATION * delta);
+		else return Mathf.Lerp(velocity.x, 0, DEACCELERATION * delta);
+	}
+
+	public override void _Process(float delta) => ProccesJump(delta);
+
+	public override void _PhysicsProcess(float delta){
+	    velocity.x = Movement(delta);
 		if(!isOnFloor) velocity.y += GRAVITY * delta;
-		MoveAndSlide(velocity);
+		if(cellingRay.IsColliding() && velocity.y < 0f) {
+			velocity.y = 0;
+			t_hold = 0;
+		}
+		Jump(delta);
+	    MoveAndSlide(velocity);
 	}
 }

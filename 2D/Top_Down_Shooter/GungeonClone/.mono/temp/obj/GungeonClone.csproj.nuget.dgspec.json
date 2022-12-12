@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/GungeonClone.csproj": {}
+  },
+  "projects": {
+    "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/GungeonClone.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/GungeonClone.csproj",
+        "projectName": "GungeonClone",
+        "projectPath": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/GungeonClone.csproj",
+        "packagesPath": "/home/ron/.nuget/packages/",
+        "outputPath": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ron/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

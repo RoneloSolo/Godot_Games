@@ -1,0 +1,9 @@
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/bin/Debug/GungeonClone.dll
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/bin/Debug/GungeonClone.pdb
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.csproj.AssemblyReference.cache
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.GeneratedMSBuildEditorConfig.editorconfig
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.AssemblyInfoInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.AssemblyInfo.cs
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.csproj.CoreCompileInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.dll
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/GungeonClone/.mono/temp/obj/Debug/GungeonClone.pdb
