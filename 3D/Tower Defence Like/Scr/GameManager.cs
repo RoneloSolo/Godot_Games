@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System;
 
 public class GameManager : Spatial{
-    private enum RescourceType{
+    public enum RescourceType{
         Gold,
         Food,
         Human
     };
 
-    private enum StractureType{
+    private enum GameState{
+        Lost,
+        Pause,
+        Playing
+    };
+
+    public enum StractureType{
         Tower,
         Farmland,
-        House
+        House,
+        Castle,
+        None
     };
 
     private struct Rescourece{
@@ -26,31 +34,36 @@ public class GameManager : Spatial{
         
     }
 
-     private IDictionary<RescourceType, int> rescourceStorage = new Dictionary<RescourceType, int>(){
+    private IDictionary<RescourceType, int> rescourceStorage = new Dictionary<RescourceType, int>(){
         {RescourceType.Food, 0},
-        {RescourceType.Human, 10},
-        {RescourceType.Gold, 0},
+        {RescourceType.Human, 0},
+        {RescourceType.Gold, 999},
 
     };
 
     private IDictionary<StractureType, Rescourece[]> stracturesCost = new Dictionary<StractureType, Rescourece[]>(){
         {StractureType.Tower, new Rescourece[1]{
-            new Rescourece(RescourceType.Human, 1)}
+            new Rescourece(RescourceType.Human, 5)}
             },
 
         {StractureType.House, new Rescourece[1]{
-            new Rescourece(RescourceType.Gold, 0)}
+            new Rescourece(RescourceType.Food, 5)}
             },
 
         {StractureType.Farmland, new Rescourece[1]{
-            new Rescourece(RescourceType.Gold, 0)}
+            new Rescourece(RescourceType.Gold, 5)}
+            },
+
+        {StractureType.Castle, new Rescourece[1]{
+            new Rescourece(RescourceType.Gold, 999)}
             }
     };
 
     private IDictionary<StractureType, PackedScene> stracturePrefab = new Dictionary<StractureType, PackedScene>(){
         {StractureType.Tower, GD.Load<PackedScene>("res://Prefab/Tower.tscn")},
         {StractureType.House, GD.Load<PackedScene>("res://Prefab/House.tscn")},
-        {StractureType.Farmland, GD.Load<PackedScene>("res://Prefab/Farmland.tscn")}
+        {StractureType.Farmland, GD.Load<PackedScene>("res://Prefab/Farmland.tscn")},
+        {StractureType.Castle, GD.Load<PackedScene>("res://Prefab/Castle.tscn")}
     };
 
     private IDictionary<Vector2, bool> worldGrid = new Dictionary<Vector2, bool>();
@@ -63,14 +76,16 @@ public class GameManager : Spatial{
     private SpatialMaterial stractureMaterial = GD.Load<SpatialMaterial>("res://Material/stracture.tres");
 
     private Spatial currentStractureBlueprint;
-    private StractureType currentStracture;
+    private StractureType currentStracture = StractureType.None;
 
     public override void _Ready(){
         camera = GetTree().CurrentScene.GetNode<Camera>("Camera");
         spaceState = GetWorld().DirectSpaceState;
 
-        currentStractureBlueprint = GetNode<Spatial>("Tower");
-        currentStracture = StractureType.Tower;
+        //Create Castle 
+        currentStracture = StractureType.Castle;
+        BuildStracture(Vector2.Zero, Vector3.Zero);
+        currentStracture = StractureType.None;
     }
 
     public override void _Process(float delta){
@@ -78,7 +93,15 @@ public class GameManager : Spatial{
 	}
 
     private void Building(){
-        if(currentStractureBlueprint == null) return;
+        if(Input.IsKeyPressed((int)KeyList.Key1)) currentStracture = StractureType.Tower;
+        else if(Input.IsKeyPressed((int)KeyList.Key2)) currentStracture = StractureType.Farmland;
+        else if(Input.IsKeyPressed((int)KeyList.Key3)) currentStracture = StractureType.House;
+
+        if(currentStracture == StractureType.None) return;
+        if(currentStractureBlueprint == null){
+            currentStractureBlueprint = (Spatial)stracturePrefab[currentStracture].Instance();
+            GetTree().CurrentScene.AddChild(currentStractureBlueprint);
+        }
 
         mousePos = GetViewport().GetMousePosition();
         var rawPosition = World.ScreenPointToRay(mousePos, camera, spaceState);
@@ -104,7 +127,7 @@ public class GameManager : Spatial{
         }
         worldGrid.Add(positionOnGrid, true);
         var stracture = (Stracture)stracturePrefab[currentStracture].Instance();
-        stracture.SetUp();
+        stracture.SetUp(this);
         float s = 1;
         
         // Todo: calculate furmola that the square can move in sqare and roate without go out from the square
@@ -112,7 +135,7 @@ public class GameManager : Spatial{
         stracture.Translation = gridPositon + new Vector3((float)GD.RandRange(-(gridSize.x/2) + s,(gridSize.x/2) - s), 0, (float)GD.RandRange(-(gridSize.y/2) + s,(gridSize.y/2) - s));
         stracture.RotationDegrees = new Vector3(0, (float)GD.RandRange(-180,180), 0);
         GetTree().CurrentScene.AddChild(stracture);
-        stracture.Material = stractureMaterial;
+        stracture.MaterialOverride = stractureMaterial;
     }
 
     private bool IsEnughRescources(){
@@ -120,6 +143,10 @@ public class GameManager : Spatial{
             if(item.amount > rescourceStorage[item.type]) return false;
         }
         return true;
+    }
+
+    public void AddRescource(RescourceType rescource, int amount){
+        rescourceStorage[rescource] += amount;
     }
 
 }

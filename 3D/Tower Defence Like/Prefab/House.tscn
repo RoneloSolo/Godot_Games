@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scr/Stracture.cs" type="Script" id=1]
+[ext_resource path="res://Scr/House.cs" type="Script" id=1]
 [ext_resource path="res://Material/blueprint.tres" type="Material" id=2]
 
-[sub_resource type="CubeMesh" id=5]
-
-[node name="House" type="CSGMesh"]
+[node name="House" type="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9 )
-mesh = SubResource( 5 )
-material = ExtResource( 2 )
+material_override = ExtResource( 2 )
 script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 1.15917
+height = 1.48858
+depth = 1.17667
+
+[connection signal="timeout" from="Timer" to="." method="DoStuff"]
