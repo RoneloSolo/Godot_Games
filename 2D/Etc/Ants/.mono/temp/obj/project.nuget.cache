@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8lrzRN7VB/zjf163RhsizpWltLd31/wIJ1xTaC8hoW698vx6xm96IWiaojZZs1YADITGET9svOCEGNWgxPUyiQ==",
+  "success": true,
+  "projectFilePath": "/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/Ants.csproj",
+  "expectedPackageFiles": [
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

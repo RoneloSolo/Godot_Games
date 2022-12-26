@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7zZwOB5WoBFUAWP5R2ed1i73F1cCN1KEcphlPJtrHALrW4QB5/Q+P87cmY25/6OgnLwxTn4KiviZQbO2DnnkPQ==",
+  "success": true,
+  "projectFilePath": "/media/ron/StorageFiles/Godot Games/Misc/Lookup Table/Lookup Table.csproj",
+  "expectedPackageFiles": [
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

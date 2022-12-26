@@ -7,13 +7,14 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = ExtResource( 2 )
 script = ExtResource( 1 )
+size = Vector2( 1.25, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235636, 0 )
-width = 1.22556
+width = 1.25
 height = 2.88633
-depth = 1.02889
+depth = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="DoStuff"]

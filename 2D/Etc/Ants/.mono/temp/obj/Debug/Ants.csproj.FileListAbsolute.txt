@@ -1,0 +1,9 @@
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.csproj.AssemblyReference.cache
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.GeneratedMSBuildEditorConfig.editorconfig
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.AssemblyInfoInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.AssemblyInfo.cs
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.csproj.CoreCompileInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/bin/Debug/Ants.dll
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/bin/Debug/Ants.pdb
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.dll
+/media/ron/StorageFiles/Godot Games/2D/Etc/Ants/.mono/temp/obj/Debug/Ants.pdb

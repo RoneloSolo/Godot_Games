@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Nn8CUT6SA5CiXsi/cxBNaFfBUu3UJuy8SJRgGiJpmzK+ySgfgxDq2LYnE+S3s9dB+3jsD2kuqJizwk5u3h0sXw==",
+  "success": true,
+  "projectFilePath": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Payday2 Pixel/Payday2 Pixel.csproj",
+  "expectedPackageFiles": [
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

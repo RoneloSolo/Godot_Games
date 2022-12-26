@@ -1,0 +1,78 @@
+{
+    "Berreta":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An pistol."
+    },
+
+    "Glock":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An pistol."
+    },
+
+    "M4":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An automatic weapon."
+    },
+
+    "Ak":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An automatic weapon."
+    },
+
+    "Chauchat":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An automatic weapon."
+    },
+
+    "Famas":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An burst weapon."
+    },
+
+    "Aug":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An burst weapon."
+    },
+
+    "Mp5":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An burst weapon."
+    },
+
+    "Aiaw":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An sniper weapon."
+    },
+
+    "Aa50":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An sniper weapon."
+    },
+
+    "Barret":
+    {
+        "Type" : "Weapon",
+        "Cost" : "15",
+        "Description" : "An sniper weapon."
+    }
+}

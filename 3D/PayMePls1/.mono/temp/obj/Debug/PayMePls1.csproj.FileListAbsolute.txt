@@ -1,0 +1,9 @@
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/bin/Debug/PayMePls1.dll
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/bin/Debug/PayMePls1.pdb
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.csproj.AssemblyReference.cache
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.GeneratedMSBuildEditorConfig.editorconfig
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.AssemblyInfoInputs.cache
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.AssemblyInfo.cs
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.csproj.CoreCompileInputs.cache
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.dll
+/media/ron/StorageFiles/Godot Games/3D/PayMePls1/.mono/temp/obj/Debug/PayMePls1.pdb

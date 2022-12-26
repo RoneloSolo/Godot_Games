@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="Gradient" id=4]
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+width = 30
+height = 30
+
+[node name="Teleporter" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.38419e-07, 4.76837e-07 )
+scale = Vector2( 0.4, 0.533333 )
+texture = SubResource( 5 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Sprites/Weapons/Ak.png" type="Texture" id=1]
+
+[node name="ShopButton" type="Button"]
+margin_right = 27.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( -20, -12 )
+icon = ExtResource( 1 )
+icon_align = 1

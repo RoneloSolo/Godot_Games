@@ -5,6 +5,7 @@ using System;
 public class Stracture : CSGCombiner{
     public bool isBuilded;
     [Export] public int maxHealth = 100;
+    [Export] public Vector2 size;
     protected int health;
     Timer timer;
     public GameManager gameManager;

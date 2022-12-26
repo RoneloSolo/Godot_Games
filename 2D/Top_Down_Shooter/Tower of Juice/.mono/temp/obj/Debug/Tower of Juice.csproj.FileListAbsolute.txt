@@ -1,0 +1,9 @@
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/bin/Debug/Tower of Juice.dll
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/bin/Debug/Tower of Juice.pdb
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.csproj.AssemblyReference.cache
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.GeneratedMSBuildEditorConfig.editorconfig
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.AssemblyInfoInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.AssemblyInfo.cs
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.csproj.CoreCompileInputs.cache
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.dll
+/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/Debug/Tower of Juice.pdb

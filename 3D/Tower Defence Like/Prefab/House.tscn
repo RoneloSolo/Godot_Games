@@ -4,15 +4,15 @@
 [ext_resource path="res://Material/blueprint.tres" type="Material" id=2]
 
 [node name="House" type="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 9 )
 material_override = ExtResource( 2 )
 script = ExtResource( 1 )
+size = Vector2( 1, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="."]
-width = 1.15917
-height = 1.48858
-depth = 1.17667
+width = 1.0
+height = 1.5
+depth = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="DoStuff"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Sprites/Weapons/Aug.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Prefabs/Projectiles/BasicProjectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scripts/Weapons/Smg.cs" type="Script" id=3]
+
+[node name="Aug" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+projectile = ExtResource( 2 )
+
+[node name="Point" type="Position2D" parent="."]
+position = Vector2( 8, 0 )

@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/Tower of Juice.csproj": {}
+  },
+  "projects": {
+    "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/Tower of Juice.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/Tower of Juice.csproj",
+        "projectName": "Tower of Juice",
+        "projectPath": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/Tower of Juice.csproj",
+        "packagesPath": "/home/ron/.nuget/packages/",
+        "outputPath": "/media/ron/StorageFiles/Godot Games/2D/Top_Down_Shooter/Tower of Juice/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ron/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

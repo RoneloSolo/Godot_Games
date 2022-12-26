@@ -43,19 +43,19 @@ public class GameManager : Spatial{
 
     private IDictionary<StractureType, Rescourece[]> stracturesCost = new Dictionary<StractureType, Rescourece[]>(){
         {StractureType.Tower, new Rescourece[1]{
-            new Rescourece(RescourceType.Human, 5)}
+            new Rescourece(RescourceType.Human, 0)}
             },
 
         {StractureType.House, new Rescourece[1]{
-            new Rescourece(RescourceType.Food, 5)}
+            new Rescourece(RescourceType.Food, 0)}
             },
 
         {StractureType.Farmland, new Rescourece[1]{
-            new Rescourece(RescourceType.Gold, 5)}
+            new Rescourece(RescourceType.Gold, 0)}
             },
 
         {StractureType.Castle, new Rescourece[1]{
-            new Rescourece(RescourceType.Gold, 999)}
+            new Rescourece(RescourceType.Gold, 0)}
             }
     };
 
@@ -128,12 +128,25 @@ public class GameManager : Spatial{
         worldGrid.Add(positionOnGrid, true);
         var stracture = (Stracture)stracturePrefab[currentStracture].Instance();
         stracture.SetUp(this);
-        float s = 1;
         
-        // Todo: calculate furmola that the square can move in sqare and roate without go out from the square
+        Vector2 B = new Vector2(gridSize.x, gridSize.y);
+        Vector2 D = new Vector2(0, 0);
 
-        stracture.Translation = gridPositon + new Vector3((float)GD.RandRange(-(gridSize.x/2) + s,(gridSize.x/2) - s), 0, (float)GD.RandRange(-(gridSize.y/2) + s,(gridSize.y/2) - s));
+        Vector2 sLength = stracture.size / 10;
+
+        float length = (sLength.y > sLength.x) ? sLength.y : sLength.x;
+
+        length *= 1.41421356237f;
+
+        B += new Vector2(-length, -length);
+        D += new Vector2(length, length);
+
+        float x = (B.x - D.x) / 2;
+        float y = (B.y - D.y) / 2;
+
+        stracture.Translation = gridPositon + new Vector3((float)GD.RandRange(-x, x), 0, (float)GD.RandRange(-y, y));
         stracture.RotationDegrees = new Vector3(0, (float)GD.RandRange(-180,180), 0);
+
         GetTree().CurrentScene.AddChild(stracture);
         stracture.MaterialOverride = stractureMaterial;
     }

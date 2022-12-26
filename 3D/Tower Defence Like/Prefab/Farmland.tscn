@@ -4,31 +4,32 @@
 [ext_resource path="res://Material/blueprint.tres" type="Material" id=2]
 
 [node name="Farmland" type="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6 )
 material_override = ExtResource( 2 )
 script = ExtResource( 1 )
+size = Vector2( 0.722, 0.956 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.255757 )
 width = 1.42629
 height = 0.426127
 depth = 1.39311
 
 [node name="CSGBox2" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.952757, -0.860601 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.952757, -0.604844 )
 width = 0.801155
 height = 1.65936
 depth = 0.695288
 
 [node name="CSGBox3" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26877, -0.345264 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26877, -0.0895071 )
 width = 1.393
 height = 0.40735
 depth = 0.291826
 
 [node name="CSGBox4" type="CSGBox" parent="."]
-transform = Transform( -0.0407073, 0.999171, 0, -0.999171, -0.0407073, 0, 0, 0, 1, 0, 1.26877, -0.345264 )
+transform = Transform( -0.0407073, 0.999171, 0, -0.999171, -0.0407073, 0, 0, 0, 1, 0, 1.26877, -0.0895071 )
 width = 1.393
 height = 0.40735
 depth = 0.291826

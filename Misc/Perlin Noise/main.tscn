@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PerlinNoise.cs" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+script = ExtResource( 1 )
+octaves = 4
+period = 95
+persistence = 0.7
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

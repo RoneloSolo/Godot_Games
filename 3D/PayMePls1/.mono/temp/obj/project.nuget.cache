@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0KD2tEepauYfLLePBAnTTSy8HlUCqVw8eladekJ9cND8tTk2dWBD2rj/cU0WAr/lc3IPfFbLRjppqLy2Aupa8Q==",
+  "success": true,
+  "projectFilePath": "/media/ron/StorageFiles/Godot Games/3D/PayMePls1/PayMePls1.csproj",
+  "expectedPackageFiles": [
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/ron/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

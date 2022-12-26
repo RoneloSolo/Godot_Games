@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = PerlinNoise
+build_property.ProjectDir = /media/ron/StorageFiles/Godot Games/Misc/Perlin Noise/
