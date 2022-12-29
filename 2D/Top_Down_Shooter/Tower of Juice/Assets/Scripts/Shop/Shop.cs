@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Shop : Node2D{
 	private UIManager UI;
 	private Dictionary<string, ShopItem> shopItemsData = new Dictionary<string, ShopItem>();
-	private PlayerData playerData = GD.Load<PlayerData>("res://Assets/Resources/PlayerData.tres");
+	private GlobalPlayer playerData = GD.Load<GlobalPlayer>("res://Assets/Resources/PlayerData.tres");
 	private string pathToShopItem = "res://Assets/Resources/Jsons/ShopItemList.json";
 	private bool isLoaded;
 	private string pathToTexture= "res://Assets/Sprites/Weapons/";

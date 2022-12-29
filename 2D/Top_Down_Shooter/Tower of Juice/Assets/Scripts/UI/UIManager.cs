@@ -8,7 +8,7 @@ public class UIManager : CanvasLayer{
     private RichTextLabel hp;
     private RichTextLabel token;
 
-    private PlayerData playerData = GD.Load<PlayerData>("res://Assets/Resources/PlayerData.tres");
+    private GlobalPlayer playerData = GD.Load<GlobalPlayer>("res://Assets/Resources/PlayerData.tres");
     
     private PackedScene shopItemButtonPrefab = GD.Load<PackedScene>("res://Assets/Prefabs/UI/ShopButton.tscn");
     
@@ -20,7 +20,7 @@ public class UIManager : CanvasLayer{
         hp = GetNode<RichTextLabel>("GUI/Hp");
         token = GetNode<RichTextLabel>("GUI/Token");
         UpdateHpUI();
-        UpdateTokenUI();
+		UpdateTokenUI();
 	}
 
     public void UpdateHpUI(){

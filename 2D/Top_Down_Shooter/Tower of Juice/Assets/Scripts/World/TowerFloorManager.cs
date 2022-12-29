@@ -5,6 +5,8 @@ public class TowerFloorManager : Node2D{
     private PackedScene arenaFloor = GD.Load<PackedScene>("res://Assets/Prefabs/World/ArenaFloor.tscn");
     private PackedScene lobbyFloor = GD.Load<PackedScene>("res://Assets/Prefabs/World/LobbyFloor.tscn");
     private Node2D currentFloor;
+    private PackedScene transition = GD.Load<PackedScene>("res://Assets/Prefabs/Effects/SceneTransition.tscn");
+
 
     public void EnterTeleporter(object body, PackedScene floor){
         EnterFloor(floor);

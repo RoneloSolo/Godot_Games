@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Scripts/Enemies/Goblin.cs" type="Script" id=1]
 
@@ -12,6 +12,8 @@ fill_to = Vector2( 3.885, 0 )
 
 [sub_resource type="CircleShape2D" id=6]
 
+[sub_resource type="CircleShape2D" id=7]
+
 [node name="Goblin" type="KinematicBody2D"]
 position = Vector2( 87, -39 )
 collision_layer = 2
@@ -23,3 +25,9 @@ texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
+
+[node name="Hit Area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit Area"]
+shape = SubResource( 7 )

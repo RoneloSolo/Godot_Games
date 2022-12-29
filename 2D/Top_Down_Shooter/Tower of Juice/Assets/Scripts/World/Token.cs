@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 public class Token : Node2D{
-    private PlayerData playerData = GD.Load<PlayerData>("res://Assets/Resources/PlayerData.tres");
+    private GlobalPlayer playerData = GD.Load<GlobalPlayer>("res://Assets/Resources/PlayerData.tres");
     private UIManager UI;
 
 	public override void _Ready(){

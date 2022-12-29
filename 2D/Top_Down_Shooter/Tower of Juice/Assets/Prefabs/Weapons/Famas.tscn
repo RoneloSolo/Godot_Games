@@ -8,6 +8,8 @@
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 projectile = ExtResource( 2 )
+delayShoot = 0.5
+amountBurst = 5
 
 [node name="Point" type="Position2D" parent="."]
 position = Vector2( 7, 0 )

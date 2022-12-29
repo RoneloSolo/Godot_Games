@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/UI/UIManager.cs" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/Player/character.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Player/Front Face.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scripts/Player/Player.cs" type="Script" id=3]
-[ext_resource path="res://Assets/Scripts/Weapons/WeaponsManager.cs" type="Script" id=4]
+[ext_resource path="res://Assets/Scripts/Player/PlayerWeapon.cs" type="Script" id=4]
 [ext_resource path="res://Assets/Scripts/World/TowerFloorManager.cs" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/Player/FrontBack Body.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -13,23 +14,33 @@ position = Vector2( 0, 1 )
 
 [node name="Cam" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.2, 0.2 )
 
 [node name="World" type="YSort" parent="."]
 
-[node name="Player" type="RigidBody2D" parent="World"]
-mode = 2
-gravity_scale = 0.0
+[node name="Player" type="KinematicBody2D" parent="World"]
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="World/Player"]
-texture = ExtResource( 2 )
-
 [node name="Hand" type="Position2D" parent="World/Player"]
+show_behind_parent = true
+position = Vector2( 0, -2 )
 script = ExtResource( 4 )
+
+[node name="GunPosition" type="Position2D" parent="World/Player/Hand"]
+show_behind_parent = true
+position = Vector2( 4, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player"]
 shape = SubResource( 1 )
+
+[node name="Head" type="Sprite" parent="World/Player"]
+show_behind_parent = true
+position = Vector2( 0, -8 )
+texture = ExtResource( 2 )
+
+[node name="Body" type="Sprite" parent="World/Player"]
+z_index = -1
+texture = ExtResource( 6 )
 
 [node name="Tower Manager" type="Node2D" parent="."]
 position = Vector2( 0, 1 )

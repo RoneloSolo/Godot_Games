@@ -1,30 +1,39 @@
 using Godot;
 using System;
 
-public class Player : RigidBody2D{
-	private float deltaTime;
-	private float time;
-	private float speed = 120;
+public class Player : Entity{
 	private Position2D hand;
 	private Vector2 mousePos;
-	private Sprite playerSpirte;
-	private float frictionScale = 8; 
-	private float gettingSpeedScale = 1f; 
-	private Vector2 topVelocity;
-	private PlayerData data = GD.Load<PlayerData>("res://Assets/Resources/PlayerData.tres");
+	private GlobalPlayer data = GD.Load<GlobalPlayer>("res://Assets/Resources/PlayerData.tres");
 	private UIManager UI;
+	private Vector2 velocity;
+	
+	private Sprite head;
+	private Sprite body;
 
-	public override void _Ready(){
+	private Texture frontHead = GD.Load<Texture>("res://Assets/Sprites/Player/Front Face.png");
+	private Texture sideHead = GD.Load<Texture>("res://Assets/Sprites/Player/Side face.png");
+	private Texture backHead = GD.Load<Texture>("res://Assets/Sprites/Player/Back Face.png");
+
+	private Texture frontbackBody = GD.Load<Texture>("res://Assets/Sprites/Player/FrontBack Body.png");
+	private Texture sideBody = GD.Load<Texture>("res://Assets/Sprites/Player/Side Body.png");
+
+	private void ReferenceObjects(){
 		hand = GetNode<Position2D>("Hand");
-		playerSpirte = GetNode<Sprite>("Sprite");
+		head = GetNode<Sprite>("Head");
+		body = GetNode<Sprite>("Body");
 		UI = GetTree().CurrentScene.GetNode<UIManager>("CanvasLayer");
 	}
 
+	public override void _Ready(){
+		SetUp(50,5,5);
+		ReferenceObjects();
+		data.SetHp(healthPoints);
+	}
+
 	public override void _Process(float delta) {
-		deltaTime = delta;
-		time += deltaTime;
-		mousePos = GetGlobalMousePosition();
-		HandHendler();
+		SpriteProcess();
+		StatusEffectProcess(delta);
 	}
 
 	public override void _PhysicsProcess(float delta) {
@@ -32,25 +41,48 @@ public class Player : RigidBody2D{
 	}
 
 	private void Movement() {
-		topVelocity.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
-		topVelocity.y = Input.GetActionStrength("down") - Input.GetActionStrength("up");
-		topVelocity = topVelocity.Normalized() * speed;
-		var desVelocity = topVelocity - LinearVelocity;
-		desVelocity = (topVelocity.Length() <= 0) ? desVelocity * frictionScale : desVelocity * gettingSpeedScale;
-		AppliedForce = desVelocity;
+		velocity = velocity.Normalized() * speed;
+		MoveAndSlide(velocity);
 	}
 
-	public override void _IntegrateForces(Physics2DDirectBodyState state){
-		Movement();
+	private void SpriteProcess() {
+		if(mousePos.y < Position.y && (mousePos.x < Position.x + 25 && mousePos.x > Position.x - 25)){
+			head.Texture = backHead;
+			body.Texture = frontbackBody;
+		}
+		else if(mousePos.y > Position.y && (mousePos.x < Position.x + 25 && mousePos.x > Position.x - 25)){
+			head.Texture = frontHead;
+			body.Texture = frontbackBody;
+		}
+		else if (Position.x < mousePos.x) {
+			head.Texture = sideHead;
+			head.FlipH = false;
+			body.Texture = sideBody;
+			body.FlipH = false;
+		}
+		else if (Position.x > mousePos.x) {
+			head.Texture = sideHead;
+			head.FlipH = true;
+			body.Texture = sideBody;
+			body.FlipH = true;
+		}
 	}
 
-	private void HandHendler() {
-		if (Position.x < mousePos.x && playerSpirte.FlipH) playerSpirte.FlipH = false;
-		else if (Position.x > mousePos.x && !playerSpirte.FlipH) playerSpirte.FlipH = true;
-	}
-
-	public void Hit(int damage){
-		data.SetHp(data.hp - damage);
+	public override void Hit(int damage){
+		healthPoints -= damage;
+		data.SetHp(healthPoints);
 		UI.UpdateHpUI();
+		if(healthPoints <= 0) Die();
+	}
+
+	private void Die(){
+		GetTree().ChangeScene("res://Assets/Scenes/Menu.tscn");
+	}
+
+	public override void _Input(InputEvent @event){
+		mousePos = GetGlobalMousePosition();
+		velocity.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
+		velocity.y = Input.GetActionStrength("down") - Input.GetActionStrength("up");
+		@event.Dispose();
 	}
 }

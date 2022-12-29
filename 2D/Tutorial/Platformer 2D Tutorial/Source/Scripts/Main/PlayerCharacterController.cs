@@ -61,6 +61,7 @@ public class PlayerCharacterController : KinematicBody2D{
 
 	private float Movement(float delta){
 	    var input = Input.GetActionStrength("right") - Input.GetActionStrength("left");
+		var mousePositon = GetGlobalMousePosition();
 	    var maxSpeed = input * SPEED;
 		if(input != 0) return Mathf.Lerp(velocity.x, maxSpeed, ACCELERATION * delta);
 		else return Mathf.Lerp(velocity.x, 0, DEACCELERATION * delta);

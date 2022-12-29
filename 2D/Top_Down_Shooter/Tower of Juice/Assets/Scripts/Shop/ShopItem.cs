@@ -6,10 +6,7 @@ public abstract class ShopItem : Resource{
     public string description {get; private set;}
     public Texture icon {get; private set;}
     public int cost {get; private set;}
-
-    // public Texture GetIcon() {return icon;}
-    // public string _GetName() {return name;}
-    // public string GetDescription() {return description;}
+    public GlobalPlayer globalPlayer {get; private set;} = GD.Load<GlobalPlayer>("res://Assets/Resources/PlayerData.tres");
 
     public ShopItem(string name, string description, Texture icon, int cost){
         this.name = name;
